@@ -52,7 +52,7 @@ A Tekken-inspired 2D turn-based fighting game with a world map campaign, pixel-a
 │  IF guess wrong   → HIT (attack damage)     │
 │                                              │
 │  Then roles swap.                            │
-│  5 turns each = 10 total turns per fight.   │
+│  until one player has zero hp left   │ 
 └─────────────────────────────────────────────┘
 ```
 
