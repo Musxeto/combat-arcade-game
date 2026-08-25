@@ -1,0 +1,29 @@
+.battle-log {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--gap-sm) var(--gap-md);
+  max-height: 120px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(8px);
+}
+
+.battle-log__entry {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  animation: fade-in 0.3s var(--ease-out);
+}
+
+.battle-log__icon {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.battle-log__text {
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}

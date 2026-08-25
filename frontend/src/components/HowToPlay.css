@@ -1,0 +1,63 @@
+.how-to-play {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  padding: var(--gap-lg);
+  gap: var(--gap-lg);
+  overflow-y: auto;
+}
+
+.how-to-play__header {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-lg);
+  flex-shrink: 0;
+}
+
+.how-to-play__title {
+  flex: 1;
+  text-align: center;
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-text-cyan);
+  font-size: 18px;
+  margin: 0;
+}
+
+.how-to-play__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.how-to-play__section {
+  padding: var(--gap-lg);
+}
+
+.how-to-play__section h2 {
+  margin: 0 0 var(--gap-md);
+}
+
+.how-to-play__section p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 var(--gap-md);
+}
+
+.how-to-play__section ol,
+.how-to-play__section ul {
+  color: var(--text-secondary);
+  padding-left: var(--gap-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  line-height: 1.5;
+}
+
+.how-to-play__section strong {
+  color: var(--text-primary);
+}
