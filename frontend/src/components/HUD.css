@@ -1,0 +1,105 @@
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--gap-md) var(--gap-lg);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.hud__player {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  width: 300px;
+}
+
+.hud__player--right {
+  text-align: right;
+}
+
+.hud__player--right .hp-bar-container {
+  direction: rtl;
+}
+
+.hud__name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.hud__name {
+  font-size: 12px;
+  text-shadow: 0 0 8px currentColor;
+}
+
+.hud__hp-text {
+  color: var(--text-secondary);
+  font-size: 9px;
+}
+
+.hud__archetype {
+  color: var(--text-muted);
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+.hud__role {
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.hud__role--attack {
+  color: var(--neon-red);
+  background: rgba(255, 23, 68, 0.15);
+  border: 1px solid rgba(255, 23, 68, 0.3);
+}
+
+.hud__role--defend {
+  color: var(--neon-blue);
+  background: rgba(41, 121, 255, 0.15);
+  border: 1px solid rgba(41, 121, 255, 0.3);
+}
+
+.hud__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  min-width: 120px;
+}
+
+.hud__turn {
+  color: var(--text-secondary);
+  font-size: 9px;
+}
+
+.hud__phase {
+  color: var(--neon-yellow);
+  text-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+  font-size: 10px;
+  animation: glow-pulse 1.5s ease-in-out infinite;
+}
+
+.hud__vs {
+  color: var(--text-muted);
+  font-size: 10px;
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .hud__player {
+    width: 200px;
+  }
+  
+  .hud {
+    padding: var(--gap-sm);
+  }
+}

@@ -1,0 +1,107 @@
+.defend-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-md);
+  padding: var(--gap-md);
+  animation: fade-in-up 0.4s var(--ease-out);
+}
+
+.defend-panel--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.defend-panel__title {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px rgba(41, 121, 255, 0.5);
+  margin: 0;
+  animation: glow-pulse 1s ease-in-out infinite;
+}
+
+.defend-panel__timer {
+  color: var(--neon-yellow);
+  text-shadow: 0 0 20px rgba(255, 230, 0, 0.6);
+  font-size: 32px;
+}
+
+.defend-panel__timer--urgent {
+  color: var(--neon-red);
+  text-shadow: 0 0 20px rgba(255, 23, 68, 0.8);
+  animation: glow-pulse 0.5s ease-in-out infinite;
+}
+
+.defend-panel__hint {
+  color: var(--neon-yellow);
+  background: rgba(255, 230, 0, 0.1);
+  border: 1px solid rgba(255, 230, 0, 0.3);
+  padding: var(--gap-sm) var(--gap-md);
+  text-shadow: 0 0 8px rgba(255, 230, 0, 0.3);
+}
+
+.defend-panel__buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-sm);
+  width: 100%;
+  max-width: 500px;
+}
+
+.defend-panel__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  padding: var(--gap-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--def-color);
+  color: var(--def-color);
+  cursor: pointer;
+  transition: all var(--speed-fast) var(--ease-out);
+  position: relative;
+}
+
+.defend-panel__btn:hover:not(:disabled) {
+  transform: scale(1.08);
+  background: color-mix(in srgb, var(--def-color) 10%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--def-color) 40%, transparent);
+}
+
+.defend-panel__btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.defend-panel__btn--eliminated {
+  opacity: 0.2;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+.defend-panel__btn:disabled {
+  cursor: not-allowed;
+}
+
+.defend-panel__label {
+  font-size: 10px;
+}
+
+.defend-panel__icon {
+  font-size: 20px;
+}
+
+.defend-panel__x {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  color: var(--neon-red);
+  text-shadow: 0 0 10px rgba(255, 23, 68, 0.5);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .defend-panel__buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

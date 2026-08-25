@@ -1,0 +1,93 @@
+.attack-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-md);
+  padding: var(--gap-md);
+  animation: fade-in-up 0.4s var(--ease-out);
+}
+
+.attack-panel--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.attack-panel__title {
+  color: var(--neon-red);
+  text-shadow: 0 0 10px rgba(255, 23, 68, 0.5);
+  margin: 0;
+  animation: glow-pulse 1s ease-in-out infinite;
+}
+
+.attack-panel__buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-sm);
+  width: 100%;
+  max-width: 600px;
+}
+
+.attack-panel__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  padding: var(--gap-md) var(--gap-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--atk-color);
+  color: var(--atk-color);
+  cursor: pointer;
+  transition: all var(--speed-fast) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.attack-panel__btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--atk-color);
+  opacity: 0;
+  transition: opacity var(--speed-fast) ease;
+}
+
+.attack-panel__btn:hover:not(:disabled) {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--atk-color) 40%, transparent);
+}
+
+.attack-panel__btn:hover:not(:disabled)::before {
+  opacity: 0.1;
+}
+
+.attack-panel__btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.attack-panel__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.attack-panel__icon {
+  font-size: 24px;
+}
+
+.attack-panel__name {
+  font-size: 8px;
+  text-align: center;
+}
+
+.attack-panel__damage {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .attack-panel__buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
